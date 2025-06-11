@@ -1,6 +1,6 @@
  export function fillPage() {
   document.getElementById("projectSection").innerHTML = `
-  <div class ='porject'>
+  <div class ='project'>
     <ul>
         <li>Title: Coding</li>
         <li>Description: Learning a new skill to give better career opportunities!</li>

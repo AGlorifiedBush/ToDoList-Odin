@@ -1,18 +1,10 @@
-const toDoBuild = function (title, description, dueDate, priority, notes, checklist) {
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
-    this.notes = notes;
-    this.checklist = checklist; 
-    
+const toDoBuild = function () {
     return {
-        title: this.title,
-        description: this.description,
-        dueDate: this.dueDate,
-        priority: this.priority,
-        notes: this.notes,
-        checklist: this.checklist
+        title: document.getElementById("title").value,
+        description: document.getElementById("description").value,
+        dueDate: document.getElementById("dueDate").value,
+        priority: document.getElementById("priority").value,
+        notes: document.getElementById("notes").value,
     };
 };
 
