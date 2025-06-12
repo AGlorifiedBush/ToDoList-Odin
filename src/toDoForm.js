@@ -1,11 +1,11 @@
 export function formBuilder() {
-    document.getElementById("projectSection").innerHTML = `
+    document.getElementById("form").innerHTML = `
     <form id="toDoForm">
         <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br>
+        <input type="text" maxlength=20 minlength=5 id="title" name="title" required><br>
 
         <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea><br>
+        <textarea id="description" maxlength=150 minlength=10 name="description" required></textarea><br>
 
         <label for="dueDate">Due Date:</label>
         <input type="date" id="dueDate" name="dueDate"><br>
@@ -14,8 +14,8 @@ export function formBuilder() {
         <input type="number" id="priority" name="priority" min="1" max="10"><br>
 
         <label for="notes">Notes:</label>
-        <textarea id="notes" name="notes"></textarea><br>
+        <textarea id="notes" maxlength=150 name="notes"></textarea><br>
 
-        <button type="submit" id="submitToDo">Add Project</button>
+        <button type="submit" id="submitToDo">Submit New Project</button>
     </form>`;
 }

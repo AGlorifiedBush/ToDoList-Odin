@@ -3,16 +3,27 @@ import { fillPage } from "./fillPage";
 import { formBuilder } from "./toDoForm";
 import { addToPage } from "./addToPage";
 
-fillPage();
+
+const toDoList = [];
+toDoList.push(fillPage());
+addToPage(toDoList);
+
 
 document.getElementById("addProjectBtn").addEventListener("click", () => {
+    
     formBuilder();
     
     document.getElementById("toDoForm").addEventListener("submit", function(e) {
+        
         e.preventDefault();
+        
+        let toDo = toDoBuild();
 
-        const toDo = toDoBuild();
+        toDoList.push(toDo);
 
-        addToPage(toDo);
+        addToPage(toDoList);
+
+        return document.getElementById("form").innerHTML = ``;
     });
 });
+
