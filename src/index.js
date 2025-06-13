@@ -1,29 +1,41 @@
 import { toDoBuild } from "./toDoBuilder";
-import { fillPage } from "./fillPage";
 import { formBuilder } from "./toDoForm";
 import { addToPage } from "./addToPage";
+import { projectForm } from "./newProjectForm";
+import { projectBuilder } from "./projectBuilder";
 
+const projectList = [];
 
-const toDoList = [];
-toDoList.push(fillPage());
-addToPage(toDoList);
-
-
-document.getElementById("addProjectBtn").addEventListener("click", () => {
+document.getElementById("newProject").addEventListener("click", () => {
     
-    formBuilder();
+    projectForm();
     
-    document.getElementById("toDoForm").addEventListener("submit", function(e) {
+    document.getElementById("submitProject").addEventListener("submit", function(e) {
         
-        e.preventDefault();
+            e.preventDefault();
+
+            let project = projectBuilder();
+
+            projectList.push(project);
+
+
+    
+        document.getElementById("newToDo").addEventListener("click", () => {
+    
+            formBuilder();
+    
+            document.getElementById("toDoForm").addEventListener("submit", function(e) {
         
-        let toDo = toDoBuild();
+                e.preventDefault();
+        
+                let toDo = toDoBuild();
 
-        toDoList.push(toDo);
+                toDoList.push(toDo);
 
-        addToPage(toDoList);
+                addToPage(toDoList);
 
-        return document.getElementById("form").innerHTML = ``;
+                return document.getElementById("form").innerHTML = ``;
+            });
+        });
     });
 });
-

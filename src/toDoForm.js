@@ -7,9 +7,6 @@ export function formBuilder() {
         <label for="description">Description:</label>
         <textarea id="description" maxlength=150 minlength=10 name="description" required></textarea><br>
 
-        <label for="dueDate">Due Date:</label>
-        <input type="date" id="dueDate" name="dueDate"><br>
-
         <label for="priority">Priority (1-10):</label>
         <input type="number" id="priority" name="priority" min="1" max="10"><br>
 
